@@ -145,6 +145,18 @@
   .tf a { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .5rem; padding: .3rem .4rem; border-radius: 6px; font-size: .88rem; color: var(--mist); text-decoration: none; line-height: 1.4; }
   .tf a:hover, .tf a:focus-visible { background: var(--panel); color: var(--cream); }
   .tf .tn { font-family: var(--serif); font-weight: 700; color: var(--gold); text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* Scroll bars: breathing room from the content, slate thumb on a deep track */
+  .toc-panel { padding-right: 0.9rem; scrollbar-gutter: stable; }
+  .tbl-wrap { padding-bottom: 0.9rem; }
+  .toc-panel, .tbl-wrap { scrollbar-width: thin; scrollbar-color: var(--slate) var(--deep); }
+  @supports not (scrollbar-color: auto) {
+    .toc-panel::-webkit-scrollbar, .tbl-wrap::-webkit-scrollbar { width: 10px; height: 10px; }
+    .toc-panel::-webkit-scrollbar-track, .tbl-wrap::-webkit-scrollbar-track { background: var(--deep); }
+    .toc-panel::-webkit-scrollbar-thumb, .tbl-wrap::-webkit-scrollbar-thumb { background: var(--slate); border-radius: 999px; border: 2px solid var(--deep); }
+    .toc-panel::-webkit-scrollbar-thumb:hover, .tbl-wrap::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+    .toc-panel::-webkit-scrollbar-corner, .tbl-wrap::-webkit-scrollbar-corner { background: transparent; }
+  }
 </style>
 
 </head>
